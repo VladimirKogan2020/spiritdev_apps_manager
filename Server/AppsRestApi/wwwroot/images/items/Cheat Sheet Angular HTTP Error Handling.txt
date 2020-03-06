@@ -1,0 +1,25 @@
+*****************************************
+* CHEAT SHEET ANGULAR HTTP ERROR HANDLING
+*****************************************
+
+
+"beipiel.component"
+------------------>
+
+- Klasse:
+public beispieldaten;
+public fehlerstatus;
+
+ngOnInit() {
+  this._beispielService.getBeispieldaten()
+    .subscribe(
+      (value) => this.beispieldaten = value,
+      (error) => this.fehlerstatus = error.status,
+      () => console.log('fertig'));
+}
+
+- Template:
+<div *ngFor="let person of beispieldaten">
+    <p>{{person.id}}, {{person.name}}, {{person.alter}}</p>
+</div>
+<p *ngIf="fehlerstatus">Fehler {{fehlerstatus}}</p>

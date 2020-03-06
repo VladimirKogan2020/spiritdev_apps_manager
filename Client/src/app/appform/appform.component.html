@@ -1,0 +1,39 @@
+<!-- spiritdev Softwareentwicklung GmbH 2020
+      Author Vladimir Kogan
+ -->
+<mat-card fxLayout="Column" fxLayoutAligment="space-around stretch">
+
+  <div fxLayout="row" fxLayoutAlign="start stretch" class="header">
+    <div fxFlex="10%">
+      <img [src]="app.image" height="80" width="60">
+    </div>
+    <div fxFlex fxFill class="title">
+      {{app.title}}
+    </div>
+
+  </div>
+  <mat-card-content fxFlex="*" fxLayout="row" fxLayoutAligment="space-around stretch">
+    <div fxLayout="column" fxFlex="20" fxLayoutAlign="space-evenly  stretch">
+      <div class="bold" fxFlex>Preis: </div>
+      <div class="bold" fxFlex>Beschreibung: </div>
+      <div class="bold" fxFlex>Kategorie: </div>
+      <div class="bold" fxFlex>Plattform: </div>
+      <div class="bold" fxFlex>Projektstart: </div>
+      <div class="bold" fxFlex>Projektende: </div>
+      <div class="bold" fxFlex>Anzahl der Kaeufe: </div>
+    </div>
+    <div fxLayout="column" fxFlex="80" fxLayoutAlign="space-evenly  stretch">
+      <div class="text" fxFlex>{{app.price|currency: 'EUR'}}</div>
+      <div class="text" fxFlex>{{app.annotation}}</div>
+      <div class="text" fxFlex>{{app.category}}</div>
+      <div class="text" fxFlex>{{app.plattform}}</div>
+      <div class="text" fxFlex>{{app.projectStart|date}}</div>
+      <div class="text" fxFlex>{{app.projectEnd|date}}</div>
+      <div class="text" fxFlex>{{app.salesAmount}}</div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions fxFlex fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button (click)="showEditDialog()">Edit</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,25 @@
+<!-- spiritdev Softwareentwicklung GmbH 2020
+      Author Vladimir Kogan
+ -->
+<div fxLayout="column" fxFill fxLayoutAlign=" stretch" >
+  
+    <mat-list fxFlex="*"  >
+        
+        <mat-list-item (click)="onClick(app,i);"  *ngFor="let app of list$|async;index as i" [class.clicked]="i===clickedIndex" >
+            <h3 matLine ><span class="title">{{app.title}} </span></h3>
+            <h4 matLine >Preis: {{app.price|currency: 'EUR'}} - {{app.annotation}} </h4>
+            <img [src]="app.image" height="65" width='50'*ngIf="app.image">
+            <mat-divider></mat-divider>
+         
+        </mat-list-item>
+       
+
+    </mat-list>
+ 
+    <mat-toolbar  fxLayout="row" fxLayoutAlign="end center"  >
+        <button mat-button (click)="addApp()">Add</button>
+        <button mat-button (click)="deleteApp()">Delete selection</button>
+        <br>
+        
+    </mat-toolbar>
+</div>

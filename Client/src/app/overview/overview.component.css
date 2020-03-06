@@ -1,0 +1,18 @@
+
+/* spiritdev Softwareentwicklung GmbH 2020
+      Author Vladimir Kogan
+*/
+.applist
+{
+    height:100%;
+}
+
+.appform{
+    height:100%;
+    background: lightgray;
+    border-left: 1px solid lightgray;
+    overflow-y: auto;
+}
+.container{
+    height:100%;
+}

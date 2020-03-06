@@ -1,0 +1,79 @@
+<!-- spiritdev Softwareentwicklung GmbH 2020
+      Author Vladimir Kogan
+ -->
+<div fxFill fxLayout="column"  fxLayoutAlign="space-around stretch">
+ <!--  {{appForm.value | json}}  -->
+
+  <h2   >{{title}}: </h2>
+  <mat-dialog-content [formGroup]="appForm" fxLayout="column"  fxLayoutAlign="start stretch">
+    <mat-form-field appearance="fill">
+      <mat-label>Titel</mat-label>
+      <input formControlName="title" matInput>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Preis,€ </mat-label>
+      <input formControlName="price" matInput>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Beschreibung</mat-label>
+      <textarea formControlName="annotation" matInput>
+                </textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Kategorie</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="Sport"> Sport </mat-option>
+        <mat-option value="Spiele"> Spiele </mat-option>
+        <mat-option value="Kochen"> Kochen </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Plattform</mat-label>
+      <mat-select formControlName="platform">
+        <mat-option value="iOS"> iOS </mat-option>
+        <mat-option value="Android"> Android </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Projektstart</mat-label>
+      <input matInput [matDatepicker]="picker"  formControlName="projectStart" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Projektende</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="projectEnd">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Anzahl der Kaeufe </mat-label>
+      <input formControlName="salesAmount" matInput>
+    </mat-form-field>
+
+    <div fxFlex class="form-group">
+      <label for="file">Choose File</label>
+      <span class="red;" *ngIf="message">{{message}}</span>   
+      <input formControlName="image" type="file"  id="file" [class.red]="appForm.value.image===''"
+        (change)="preview($event.target.files)">
+      <img [src]="appForm.value.image" height="100" width='75' *ngIf="appForm.value.image">
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end">
+    <button mat-button (click)="closeDialog()" cdkFocusInitial>Cancel</button>
+    <button mat-button (click)="saveDialogChanges()" [class.disabled]="appForm.get('title').invalid 
+    || appForm.get('image').invalid || appForm.get('category').invalid || appForm.get('platform').invalid 
+    || appForm.get('projectStart').invalid || appForm.get('projectEnd').invalid 
+    || appForm.get('salesAmount').invalid   || appForm.get('annotation').invalid">Done</button>
+  </mat-dialog-actions>
+</div>

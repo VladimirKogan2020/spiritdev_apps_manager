@@ -1,0 +1,58 @@
+*************************
+* CHEAT SHEET ANGULAR CLI
+*************************
+
+Verzeichnis wechseln in der Eingabeaufforderung
+---------------------------------------------->
+
+cd verzeichnis-name
+
+
+neues Angular-Projekt
+-------------------->
+
+ng new projekt-name
+
+
+Entwicklungsserver starten
+------------------------->
+
+ng serve
+
+ng serve --port 1337  // mit zusätzlicher Port-Angabe
+
+
+neue Komponente
+-------------->
+
+ng g c komponenten-name
+
+// "g" ist die Abkürzung für "generate"
+// "c" ist die Abkürzung für "component"
+
+- neue Komponente mit Inline-Template ->
+
+ng g c komponenten-name --inlineTemplate
+
+- neue Komponente mit Inline-Style ->
+
+ng g c komponenten-name --inlineStyle
+
+- neue Komponente mit Inline-Template und Inline-Style ->
+
+ng g c komponenten-name --inlineTemplate --inlineStyle
+
+
+neuer Service
+------------>
+
+ng g s service-name
+
+// "g" ist die Abkürzung für "generate"
+// "s" ist die Abkürzung für "service"
+
+
+Produktions-Build generieren
+--------------------------->
+
+ng build

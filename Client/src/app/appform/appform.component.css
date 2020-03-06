@@ -1,0 +1,31 @@
+/* spiritdev Softwareentwicklung GmbH 2020
+      Author Vladimir Kogan
+*/
+.box{
+    text-align:center;
+    max-width:80%;   
+} 
+
+mat-card{
+  margin: 8px;
+  max-height: 98%;
+  height: 98%;
+display:block;
+}
+.title{
+ text-align:center;
+ font-weight: 500;
+ font-size:42px;
+ display:block;
+ padding-top:30px;
+}
+
+.header{border-bottom:2px solid lightgray;}
+
+.bold{ 
+  font-weight:550;
+  font-size: medium;
+  padding-top: 10px;
+}
+
+.text{ padding-top: 10px;}

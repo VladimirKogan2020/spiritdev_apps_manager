@@ -1,0 +1,23 @@
+***********************************
+* CHEAT SHEET ANGULAR EVENT BINDING
+***********************************
+
+
+Event Binding
+-------------
+
+- Klasse:
+beiKlick() { console.log("Erfolg") }
+
+- Template:
+<button (click)="beiKlick()">Anzeigen</button>
+
+
+Event-Bezug
+-----------
+
+- Klasse:
+beiKlick(event) { console.log(event) }
+
+- Template:
+<button (click)="beiKlick($event)">Anzeigen</button>
