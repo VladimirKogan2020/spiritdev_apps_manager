@@ -1,0 +1,1 @@
+# spiritdev_apps_manager
